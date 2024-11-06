@@ -1,0 +1,152 @@
+* {
+    padding: 0;
+    margin: 0;
+    border: 0;
+    box-sizing: border-box;
+    font-family: "Open Sans", sans-serif;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-areas:
+        "nav"
+        "main"
+        "footer";
+}
+
+.nav {
+    grid-area: nav;
+    background-color: #d1e7dd;
+    padding: 0.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-brand img {
+    height: 2.5rem;
+}
+
+.menu-mobile {
+    padding: 0.5rem;
+}
+
+.menu-desktop {
+    display: none;
+}
+
+.main {
+    grid-area: main;
+    background-color: #f8f8f8;
+}
+
+.main-filter {
+    padding: 0.5rem 2rem;
+    text-align: center;
+    background-color: #e5efeb;
+}
+
+.main-filter label {
+    padding-bottom: 0.2rem;
+}
+
+.main-products {
+    padding: 1rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1.5rem;
+}
+
+.card {
+    width: 18rem;
+}
+
+.card-body {
+    text-align: center;
+}
+
+.main-nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+}
+
+.footer {
+    grid-area: footer;
+    background-color: #93cab1;
+    text-align: center;
+    padding-top: 1rem;
+}
+
+.highlight-text {
+    color: #004f2c;
+    font-weight: 500;
+}
+
+@media (min-width: 576px) {
+    .grid-container {
+        grid-template-areas:
+            "nav main"
+            "footer main";
+        grid-template-columns: 1fr 6fr;
+    }
+
+    .nav {
+        flex-direction: column;
+        justify-content: flex-start;
+        height: 85vh;
+    }
+
+    .nav-brand {
+        padding-top: 1rem;
+    }
+
+    .menu-mobile {
+        display: none;
+    }
+
+    .menu-desktop {
+        display: flex;
+        flex-direction: column;
+        font-weight: 300;
+        margin-top: 2rem;
+    }
+
+    .menu-desktop p {
+        text-align: center;
+        margin-bottom: 0.3rem;
+    }
+
+    .main {
+        height: 100vh;
+    }
+
+    .main-filter {
+        height: 12%;
+    }
+
+    .main-products {
+        padding: 2rem;
+        height: 80%;
+        overflow: auto;
+    }
+
+    .card {
+        width: 15rem;
+    }
+
+    .main-nav {
+        height: 7%;
+        padding: 0;
+    }
+
+    .footer {
+        height: 15vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding-top: 0;
+    }
+}
